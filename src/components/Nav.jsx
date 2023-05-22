@@ -6,10 +6,13 @@ import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Nav = () => {
-  const { data: session } = useSession();
-
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
+  const { data: session } = useSession();
+
+  const handleClick = () => {
+    setToggleDropdown((prevState) => !prevState);
+  };
 
   useEffect(() => {
     (async () => {
@@ -82,7 +85,7 @@ const Nav = () => {
               height={37}
               className="rounded-full"
               alt="profile"
-              onClick={() => setToggleDropdown(!toggleDropdown)}
+              onClick={handleClick}
             />
 
             {toggleDropdown && (
@@ -90,21 +93,21 @@ const Nav = () => {
                 <Link
                   href="/profile"
                   className="dropdown_link"
-                  onClick={() => setToggleDropdown(false)}
+                  onClick={handleClick}
                 >
                   My Profile
                 </Link>
                 <Link
                   href="/create-prompt"
                   className="dropdown_link"
-                  onClick={() => setToggleDropdown(false)}
+                  onClick={handleClick}
                 >
                   Create Prompt
                 </Link>
                 <button
                   type="button"
                   onClick={() => {
-                    setToggleDropdown(false);
+                    handleClick;
                     signOut();
                   }}
                   className="mt-5 w-full black_btn"
