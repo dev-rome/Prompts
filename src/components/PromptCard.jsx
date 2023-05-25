@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
+import { FiEdit, FiTrash2 } from "react-icons/fi";
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const [copied, setCopied] = useState("");
@@ -61,18 +62,18 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
 
       {session?.user.id === post.creator._id && pathName === "/profile" && (
         <div className="flex gap-2 mt-3">
-          <p
-            className="font-inter text-sm green_gradient cursor-pointer"
+          <span
+            className="text-lg text-[#2f9e44] cursor-pointer"
             onClick={handleEdit}
           >
-            Edit
-          </p>
-          <p
-            className="font-inter text-sm red_gradient cursor-pointer"
+            <FiEdit />
+          </span>
+          <span
+            className="text-lg text-[#e03131] cursor-pointer"
             onClick={handleDelete}
           >
-            Delete
-          </p>
+            <FiTrash2 />
+          </span>
         </div>
       )}
     </div>
