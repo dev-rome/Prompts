@@ -1,13 +1,14 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import Link from "next/link";
+import Image from "next/image";
 
 const Nav = () => {
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
+
   const { data: session } = useSession();
 
   const handleClick = () => {
