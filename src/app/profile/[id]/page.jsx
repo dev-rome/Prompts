@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { userSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import UserProfile from "../../../components/UserProfile";
 
-const User = () => {
+const User = ({ params }) => {
   const [posts, setPosts] = useState([]);
 
-  const searchParams = userSearchParams();
+  const searchParams = useSearchParams();
   const userName = searchParams.get("name");
 
   useEffect(() => {
@@ -17,8 +17,8 @@ const User = () => {
 
       setPosts(data);
     };
-    if (params.id) fetchPosts();
-  }, []);
+    if (params?.id) fetchPosts();
+  }, [params.id]);
 
   return (
     <UserProfile
