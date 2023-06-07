@@ -1,9 +1,6 @@
 import Link from "next/link";
 
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
-  const handleChange = (e, field) => {
-    setPost((prevPost) => ({ ...prevPost, [field]: e.target.value }));
-  };
 
   return (
     <section className="w-full max-w-full flex-start flex-col">
@@ -25,7 +22,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           </span>
           <textarea
             value={post.prompt}
-            onChange={(e) => handleChange(e, "prompt")}
+            onChange={(e) => setPost({...post, prompt: e.target.value})}
             placeholder="Write your prompt here..."
             required
             className="form_textarea"
@@ -41,7 +38,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           </span>
           <input
             value={post.tag}
-            onChange={(e) => handleChange(e, "tag")}
+            onChange={(e) => setPost({...post, tag: e.target.value})}
             placeholder="#tag"
             required
             className="form_input"
