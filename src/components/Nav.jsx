@@ -16,10 +16,13 @@ const Nav = () => {
   };
 
   useEffect(() => {
-    (async () => {
+    const setUpProviders = async () => {
       const res = await getProviders();
+
       setProviders(res);
-    })();
+    };
+
+    setUpProviders();
   }, []);
 
   return (
