@@ -23,18 +23,18 @@ const Feed = () => {
   const [searching, setSearching] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
 
-  const fetchPosts = async () => {
-    const res = await fetch("/api/prompt", {
-      method: "GET",
-      headers: {
-        "Cache-Control": "no-store",
-      }
-    });
-    const data = await res.json();
-    setPosts(data);
-  };
-
   useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await fetch("/api/prompt", {
+        method: "GET",
+        headers: {
+          "Cache-Control": "no-store",
+        },
+      });
+      const data = await res.json();
+      setPosts(data);
+    };
+
     fetchPosts();
   }, []);
 
