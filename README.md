@@ -2,14 +2,23 @@
 
 Welcome to the Prompts Project repository. This endeavor serves as both a practical exploration into Next.js and a platform to solidify my understanding of the framework
 
+## Screenshots
+
 ![Prompts Project](./public/assets/images/prompts.png)
+![Prompts Project](./public/assets/images/Screenshot%202023-06-09%20at%207.56.46%20PM.png)
+![Prompts Project](./public/assets/images/Screenshot%202023-06-09%20at%208.06.07%20PM.png)
+![Prompts Project](./public/assets/images/Screenshot%202023-06-09%20at%207.57.29%20PM.png)
+![Prompts Project](./public/assets/images/Screenshot%202023-06-09%20at%207.57.39%20PM.png)
 
 ## Table of Contents
 
 - [Prompts Project](#prompts-project)
+  - [Screenshots](#screenshots)
   - [Table of Contents](#table-of-contents)
   - [About The Project](#about-the-project)
   - [Technical Objectives](#technical-objectives)
+  - [Features](#features)
+  - [Tech Stack](#tech-stack)
   - [Contact](#contact)
 
 ## About The Project
@@ -28,6 +37,23 @@ While developing this project, my key objectives included:
 6. Understanding Next.js 13 page, layout, loading, and error Special Files.
 7. Understanding Next.js 13 Serverless Route Handlers (Next API, Full Stack Apps).
 8. Understanding Next.js 13 Metadata and Search Engine Optimization (SEO).
+
+## Features
+
+- Users can sign in
+- Users can create a post
+- Users can edit a post
+- Users can delete a post
+- Users can search other users and tags
+- Responsive Design
+
+## Tech Stack
+
+- Next.js
+- Next Auth
+- JavaScript
+- Tailwind CSS
+- MongoDB
 
 ## Contact
 
